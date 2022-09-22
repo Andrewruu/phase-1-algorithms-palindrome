@@ -1,13 +1,38 @@
 function isPalindrome(word) {
-  // Write your algorithm here
+  let specChar = /[\W_]/g
+  let lowerWord = word.toLowerCase().replace(specChar, '')
+  let reverseWord = lowerWord.split('').reverse().join('')
+  return reverseWord === lowerWord
 }
 
 /* 
   Add your pseudocode here
+  
+  remove special chars
+
+  strng revs is same as string
+
+  return true
+  else
+  false
+
 */
 
 /*
-  Add written explanation of your solution here
+  
+  /[\W_]/g;
+  looked up how to search of away to remove special chars
+  
+  [ and ] are the start and end of a character set.
+  \W means "non-word", as opposed to \w which will match a word.
+  _ is the "_" character.
+  / mark the beginning and end of a regular expression.
+  g means it's a global search. 
+
+  I then set the word to be lower case and replace special char to remove them
+  Next I reversed the words after spliting it and then i rejoined them
+  last i check if the reviesed word is equal to the lower case word.
+
 */
 
 // You can run `node index.js` to view these console logs
